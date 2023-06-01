@@ -1,10 +1,7 @@
 package com.anudip.library1project.services;
 
-
 import java.util.List;
-
 import org.springframework.stereotype.Service;
-
 import com.anudip.library1project.exception.ResourceNotFoundException;
 import com.anudip.library1project.models.Book;
 import com.anudip.library1project.repository.Bookrepository;
@@ -17,7 +14,7 @@ public class BookserviceImpl implements BookService {
     	super();
         this.bookrepository = bookrepository;
     }
-  //  @Override
+   @Override
 	public Book saveBook(Book book) {
 		return bookrepository.save(book);
 	}
@@ -26,13 +23,14 @@ public class BookserviceImpl implements BookService {
 	public List<Book> getAllBooks() {
 		return bookrepository.findAll();
 	}
-
-	public Book getBookById(Long bid) {
+    
+	@Override
+	public Book getBookById(long bid) {
 		return  bookrepository.findById(bid).orElseThrow(() -> 
 		            new ResourceNotFoundException("Book", "bid", bid));  
 	}
 	@Override
-	public Book updateBook(Long id, Book book) {
+	public Book updateBook(long id, Book book) {
 		
 		// we need to check whether employee with given id is exist in DB or not
 		Book existingBook = bookrepository.findById(id).orElseThrow(
@@ -52,8 +50,8 @@ public class BookserviceImpl implements BookService {
 		return existingBook;
 	}	
 
-	//  @Override
- 	public void deleteBook(Long bid) {
+	@Override
+ 	public void deleteBook(long bid) {
 		
 		// check whether a employee exist in a DB or not
 		bookrepository.findById(bid).orElseThrow(() -> 
@@ -61,4 +59,3 @@ public class BookserviceImpl implements BookService {
 		bookrepository.deleteById(bid);
 	}
 }
-
