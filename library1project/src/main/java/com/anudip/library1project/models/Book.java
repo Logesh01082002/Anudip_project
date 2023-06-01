@@ -2,8 +2,8 @@ package com.anudip.library1project.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+//import jakarta.persistence.GeneratedValue;
+//import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -13,7 +13,7 @@ import jakarta.persistence.Table;
 public class Book {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long bid;
 	
 	@Column(name = "book_name", nullable = false)
@@ -40,9 +40,10 @@ public class Book {
 	public Book() {
 		
 	}
-	public Book(String bookName, String authorName, String publisher, String category, String copies,double year, String status) 
+	public Book(long bid,String bookName, String authorName, String publisher, String category, String copies,double year, String status) 
 	{
 		super();
+		this.bid=bid;
 		this.bookName=bookName;
 		this.authorName = authorName;
 		this.publisher = publisher;
@@ -52,10 +53,13 @@ public class Book {
 		this.status = status;
 	}
 
-	public long getbid() {
+	public long getBid() {
 		return bid;
 	}
-
+	public void setBid(long bid) {
+		this.bid = bid;
+	}
+	
 	public String getBookName() {
 		return bookName;
 	}
