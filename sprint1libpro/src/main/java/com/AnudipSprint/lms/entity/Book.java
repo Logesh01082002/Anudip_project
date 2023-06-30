@@ -15,13 +15,14 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
-    
-    private String serialName;
-    
     private String description;
-   
+    private int page;
+    private String genre;
+    private int year;
+    private double price;
+    private double no_of_books;
+    
     @ManyToOne
     @JoinColumn(name = "aid")
     private Author author;
@@ -30,18 +31,23 @@ public class Book {
     	
     }
      
-	public Book(Long id, String name, String serialName, String description, Author author) {
+	public Book(Long id, String name, String description,int page,String genre,int year,double price,double no_of_books,char sub_code, Author author) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.serialName = serialName;
 		this.description = description;
+		this.page = page;
+		this.genre = genre;
+		this.year = year;
+		this.price = price;
+		this.no_of_books = no_of_books;
 		this.author = author;
 	}
-	public Long getid() {
+
+	public Long getId() {
 		return id;
 	}
-	public void setid(Long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -52,13 +58,6 @@ public class Book {
 		this.name = name;
 	}
 
-	public String getSerialName() {
-		return serialName;
-	}
-	public void setSerialName(String serialName) {
-		this.serialName = serialName;
-	}
-
 	public String getDescription() {
 		return description;
 	}
@@ -66,17 +65,53 @@ public class Book {
 		this.description = description;
 	}
 
+	public int getPage() {
+		return page;
+	}
+	public void setPage(int page) {
+		this.page = page;
+	}
+
+	public String getGenre() {
+		return genre;
+	}
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+
+	public int getYear() {
+		return year;
+	}
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public double getNo_of_books() {
+		return no_of_books;
+	}
+
+	public void setNo_of_books(double no_of_books) {
+		this.no_of_books = no_of_books;
+	}
+
 	public Author getAuthor() {
 		return author;
 	}
+
 	public void setAuthor(Author author) {
 		this.author = author;
 	}
 
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", name=" + name + ", serialName=" + serialName + ", description="
-				+ description+ ", author=" + author + "]";
+		return "Book [id=" + id + ", name=" + name + ", description=" + description+ ", page =" + page + ", genre =" + genre + ", year = " + year + ", price = "+ price + ", no_of_books = " + no_of_books + " author=" + author + "]";
 	}
 
     
