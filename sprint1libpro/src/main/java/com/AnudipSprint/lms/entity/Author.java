@@ -22,6 +22,9 @@ public class Author {
 
     private String name;
     private String description;
+    private int age;
+    private String country;
+    private double rating;
     
     @JsonIgnore
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
@@ -31,19 +34,22 @@ public class Author {
     	
     }
 
-	public Author(Long aid, String name,String description,
+	public Author(Long aid, String name,String description,int age,String country,double rating,
 			List<Book> books) {
 		super();
 		this.aid = aid;
 		this.name = name;
+		this.age = age;
+		this.country = country;
+		this.rating = rating;
 		this.description = description;
 	}
-
-	public Long getDid() {
+	
+	public Long getAid() {
 		return aid;
 	}
 
-	public void setDid(Long aid) {
+	public void setAid(Long aid) {
 		this.aid = aid;
 	}
 
@@ -63,6 +69,30 @@ public class Author {
 		this.description = description;
 	}
 
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public double getRating() {
+		return rating;
+	}
+
+	public void setRating(double rating) {
+		this.rating = rating;
+	}
+
 	public List<Book> getBooks() {
 		return books;
 	}
@@ -73,7 +103,7 @@ public class Author {
 
 	@Override
 	public String toString() {
-		return "Author [aid=" + aid + ", name=" + name + ", description=" + description + ", books=" + books + "]";
+		return "Author [aid=" + aid + ", name=" + name + ", age=" + age +",country =" + country +",rating = " + rating +", description=" + description + ", books=" + books + "]";
 	}  
     
 }
