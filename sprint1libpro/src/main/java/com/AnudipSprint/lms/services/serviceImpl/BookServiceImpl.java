@@ -42,8 +42,10 @@ public class BookServiceImpl implements BookService {
                 .orElseThrow(() -> new ResourceNotFoundException("Book","id",id));
         
         existingBook.setName(book.getName());
-        existingBook.setSerialName(book.getSerialName());
         existingBook.setDescription(book.getDescription()); 
+        existingBook.setPage(book.getPage());
+        existingBook.setYear(book.getYear());
+        existingBook.setPrice(book.getPrice());
    
 
         return bookRepository.save(existingBook);
