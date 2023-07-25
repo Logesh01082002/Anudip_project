@@ -1,0 +1,48 @@
+.custom-form {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .custom-form h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #007bff;
+  }
+
+  .custom-form .form-group {
+    margin-bottom: 20px;
+  }
+
+  .custom-form label {
+    font-weight: bold;
+  }
+
+  .custom-form input[type="text"],
+  .custom-form input[type="number"],
+  .custom-form input[type="tel"],
+  .custom-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .custom-form input[type="text"]:focus,
+  .custom-form input[type="number"]:focus,
+  .custom-form input[type="tel"]:focus,
+  .custom-form textarea:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+
+  .custom-form .btn-success {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }

@@ -1,0 +1,41 @@
+
+
+<h2>Book list</h2>
+<table class="table table-striped">
+<thead>
+    <tr>
+<th>Book id</th>
+<th>Book Name:</th>
+<th>No of books:</th>
+<th>Page:</th>
+<th>Price:</th>
+<th></th>
+<th>Actions</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+    <tr *ngFor="let book of books">
+<td>{{book.id}}</td>
+<td>{{book.name}}</td>
+<td>{{book.no_of_books}}</td>
+<td>{{book.page}}</td>
+<td>{{book.price}}</td>
+<td>
+    <button (click)="bookDetails(book.id)" class="btn btn-info">
+        view</button>
+</td>
+<td>
+    <button (click)="updateBook(book.id)" class="btn btn-info">
+    Update</button>
+</td>
+ <td>
+    <button (click)="deleteBook(book.id)" class="btn btn-danger">
+    Delete</button>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+  

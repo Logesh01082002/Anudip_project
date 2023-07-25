@@ -1,0 +1,75 @@
+<div class="col-md-6 offset-md-3 custom-form">
+    <br>
+    
+    <h3 class="text-center" style="font-family:Arial, Helvetica, sans-serif">
+        <strong>Update Book</strong></h3>
+    
+    <form (ngSubmit)="updateBook()" #bookForm="ngForm">
+
+        <div class="form-group">
+        <label><span class="req">*</span>First Name:</label>
+        <input type="text" #name="ngModel" class="form-control" id="name"
+         [(ngModel)]="book.name" name="name" required>
+         <span class="text-danger" *ngIf="name.valid==false && name.touched ">
+            FirstName is Required!</span>
+        </div>
+
+    
+        <div class="form-group">
+            <label><span class="req">*</span>Genre:</label>
+            <input type="text" #genre="ngModel" class="form-control" id="genre"
+             [(ngModel)]="book.genre" name="genre" required>
+             <span class="text-danger" *ngIf="genre.valid==false && genre.touched ">
+                genre is Required!</span>
+            </div>
+
+            <div class="form-group">
+                <label><span class="req">*</span>Description:</label>
+                <input type="text" #description="ngModel" class="form-control" id="description"
+                 [(ngModel)]="book.description" name="description" required>
+                 <span class="text-danger" *ngIf="description.valid==false && description.touched ">
+                    Description is Required!</span>
+                </div>
+                
+             <div class="form-group">
+                    <label><span class="req">*</span>no_of_books :</label>
+                    <input type="text" #no_of_books="ngModel" class="form-control" id="no_of_books"
+                     [(ngModel)]="book.no_of_books" name="no_of_books" required>
+                     <span class="text-danger" *ngIf="no_of_books.valid==false && no_of_books.touched ">
+                        no_of_books is Required!</span>
+                    </div>
+
+             <div class="form-group">
+                    <label><span class="req">*</span>Page :</label>
+                    <input type="text" #page="ngModel" class="form-control" id="page"
+                     [(ngModel)]="book.page" name="page" required>
+                     <span class="text-danger" *ngIf="page.valid==false && page.touched ">
+                        page is Required!</span>
+                    </div>
+                    
+            
+             <div class="form-group">
+                    <label><span class="req">*</span>Year :</label>
+                    <input type="text" #year="ngModel" class="form-control" id="year"
+                     [(ngModel)]="book.year" name="year" required>
+                     <span class="text-danger" *ngIf="year.valid==false && year.touched ">
+                        year is Required!</span>
+                    </div>
+    
+                    <div class="form-group">
+                        <label><span class="req">*</span>Price :</label>
+                        <input type="text" #price="ngModel" class="form-control" id="price"
+                         [(ngModel)]="book.price" name="price" required>
+                         <span class="text-danger" *ngIf="price.valid==false && price.touched ">
+                            price is Required!</span>
+                        </div>  
+
+<br>
+   <div class="text-center">
+    <button class="btn btn-success" type="submit" [disabled]="!bookForm.valid">submit</button>
+    </div>
+    </form>
+    
+    </div>
+    
+

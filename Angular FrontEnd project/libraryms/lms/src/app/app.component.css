@@ -1,0 +1,36 @@
+nav {
+    background-color: #3310a3fd;
+    color: #d0cdcdb3;
+    padding: 10px;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+  }
+  
+  a:hover {
+    background-color: #525f74;
+  }
+  /* app.component.css */
+h1 {
+  font-size: 34px;
+  color: rgb(250, 174, 10);
+  text-align: center;
+  margin-bottom: 20px;
+  /* Add more styles as needed */
+}
+
+

@@ -1,0 +1,31 @@
+<div class="col-md-6 offset-md-3">
+    <br>
+    
+    <h3 class="text-center">Create Author :</h3><br>
+    
+    <form (ngSubmit)="onSubmit()" #authorform="ngForm">
+    <div class="form-group">
+    <label><strong><span>*</span>Author Name:</strong></label>
+    <input type="text" class="form-control" id="name"
+     [(ngModel)]="author.name" name="name" required>
+    </div>
+
+    <div class="form-group">
+        <label><strong><span>*</span>Age :</strong></label>
+        <input type="text" class="form-control" id="age"
+         [(ngModel)]="author.age" name="age" required>
+    </div>
+
+    <div class="form-group">
+        <label><strong><span>*</span>Description:</strong></label>
+        <input type="text" class="form-control" id="description"
+            [(ngModel)]="author.description" name="description" required>
+        </div>
+
+    <br>
+    <button class="btn btn-success" type="submit" [disabled]="!authorform.valid">Create</button>
+    
+    </form>
+    
+    </div>
+    

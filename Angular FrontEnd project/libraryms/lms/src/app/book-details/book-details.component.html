@@ -1,0 +1,15 @@
+<h3>Book Details :</h3><br>
+
+<div class="card">
+ <div class="card-body"> <h5 class="card-title">{{book.id}} - {{book.name}} {{book.description}}</h5> 
+<p class="card-text"><b>Page :</b> {{book.page}}</p> 
+<p class="card-text"><b>genre:</b> {{book.genre}}</p>
+<p class="card-text"><b>price :</b> {{book.price}}</p>
+
+ <p class="card-text"><b>Author:</b> {{book.author.name}}</p> 
+ <p class="card-text"><b>No_of_books :</b> {{book.no_of_books}}</p>
+ <p class="card-text"><b>year :</b> {{book.year}}</p>
+</div> </div>
+<br>
+
+<button  (click)="goToBookList()" class="btn btn-success">Back</button>
